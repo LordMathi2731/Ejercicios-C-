@@ -1,0 +1,213 @@
+#include<iostream>
+
+
+
+using namespace std;
+
+void main()
+
+
+
+{
+
+
+
+char material;
+
+int hora;
+
+char TipoServicio;
+
+int monto;
+
+int contador_libros = 0;
+
+int contador_articulo = 0;
+
+int contador_monografias = 0;
+
+int porcentaje_mañana = 0;
+
+
+
+bool salir = false;
+
+
+
+while (true)
+
+
+
+{
+
+
+
+do
+
+
+
+{
+
+
+
+cout << "Tipo de material (L: Libro; A: Articulo; M: Monografia):";
+
+
+
+cin >> material;
+
+
+
+if (material == 'X'|| material == 'x'){
+
+
+
+salir = true;
+
+
+
+break;
+
+
+
+}
+
+
+
+} while (!(material == 'L' || material == 'l' || material == 'A' || material == 'a' || material == 'M' || material == 'm'));
+
+
+
+if (salir == true) break;
+
+
+
+
+
+
+
+do
+
+
+
+{
+
+
+
+cout << " Hora de registro (Entero positivo entre 0 y 23):";
+
+
+
+cin >> hora;
+
+
+
+
+
+
+
+} while (!(hora >= 0 && hora <= 23));
+
+
+
+
+
+
+
+do
+
+
+
+{
+
+
+
+cout << "Tipo de servicio (P: Prestamo; V: Venta):";
+
+
+
+cin >> TipoServicio;
+
+
+
+} while (!(TipoServicio == 'P' || TipoServicio == 'V' || TipoServicio == 'p' || TipoServicio == 'v'));
+
+
+
+
+
+
+
+do
+
+
+
+{
+
+
+
+cout << "Ingrese el monto del servicio:";
+
+
+
+cin >> monto;
+
+
+
+} while (!(monto >= 0));
+
+
+
+if (material == 'L' || material == 'l') contador_libros++;
+
+if (material == 'A' || material == 'a') contador_articulo++;
+
+if (material == 'M' || material == 'm') contador_monografias++;
+
+if (hora >= 6 && hora <= 12) porcentaje_mañana++;
+
+}
+
+
+
+
+
+
+
+cout << "Porcentaje de registros que fueron ingresados durante la mañana:" << porcentaje_mañana * (100 / 3) << endl;
+
+cout << "El material o materiales que tienen la mayor frecuencia:" << endl;
+
+if (contador_libros >= contador_articulo && contador_libros >= contador_monografias) {
+
+cout << "Libros:" << endl;
+
+}
+
+if (contador_articulo >= contador_libros && contador_articulo >= contador_monografias) {
+
+cout << "Articulo" << endl;
+
+}
+
+if (contador_monografias >= contador_articulo && contador_monografias >= contador_libros) {
+
+cout << "Monografias" << endl;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+system("pause>>null");
+
+
+
+}

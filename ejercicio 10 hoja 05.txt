@@ -1,0 +1,69 @@
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+
+int main() {
+    int n = 0;
+	do
+	{
+		cout << "Ingrese N:";
+		cin >> n;
+	} while (!(n>=2&&n<=10));
+
+
+	for (int i = 0; i < n; i++)
+	{
+		int nl = (n - i);
+		int repetir = 0;
+		int espacio = (n * 2 - 2);
+		espacio -= i;
+		nl = (n - i);
+		for (int j = n; j >= nl;j--){
+			cout << j;
+			repetir++;
+			espacio--;
+			
+			if (j == 1) {
+				repetir = 0;
+				espacio = 0;
+				for (int k = 2; k <= n; k++) {
+					cout << k;
+				}
+			}
+		}
+		for (int z = 0; z < espacio; z++){
+			cout << " ";
+		}
+		for (int k=repetir;k>0;k--)
+		{
+			cout << (n - k + 1);
+		}
+
+		cout << endl;
+	}
+	for (int i = (n-2);i>=0;i--)
+	{
+		int nl = (n - i);
+		int repetir = 0;
+		int espacio = (n * 2 - 2);
+		espacio -= i;
+		nl = (n - i);
+		for (int j = n; j >= nl; j--) {
+			cout << j;
+			repetir++;
+			espacio--;
+		}
+		for (int z = 0; z < espacio; z++) {
+			cout << " ";
+		}
+		for (int k = repetir; k > 0; k--)
+		{
+			cout << (n - k + 1);
+		}
+
+		cout << endl;
+	}
+   
+	system("pause>>null");
+}

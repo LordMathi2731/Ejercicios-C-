@@ -1,0 +1,25 @@
+#include <iostream>
+
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+void calcula(double lado, double *area, double *volumen, double *areaLateral) {
+	*area = lado * lado;
+	*volumen = lado * lado * lado;
+	*areaLateral = (*area) * 6;
+
+}
+double a, v, al;
+
+void main (){
+	double lado = 100;
+	cout << "Dame lado:";
+	cin >> lado;
+	calcula(lado, &a, &v,&al);
+	cout << "Area:" << a << endl;
+	cout << "Volumen:" << v << endl;
+	cout << "Area lateral:" << al << endl;
+	system("pause>>null");
+}

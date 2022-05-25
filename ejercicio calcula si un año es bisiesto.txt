@@ -1,0 +1,25 @@
+#include <iostream>
+
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+bool esBisiesto(int anio) {
+	if (anio%4==0 && (anio%400==0 || anio%100!=0))
+	{
+		return true;
+	}
+	return false;
+}
+
+void main (){
+	if (esBisiesto(1800))
+	{
+		cout << "El anio si es bisiesto!";
+	}
+	else {
+		cout << "El anio no es bisiesto!";
+	}
+	system("pause>>null");
+}

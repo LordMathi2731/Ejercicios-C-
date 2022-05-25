@@ -1,0 +1,26 @@
+#include <iostream>
+
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+void convierte(double c, double &me, double &md) {
+	double ve = 4.2, vd = 3.78;
+	 me = c / ve;
+	 md = c / vd;
+
+}
+
+
+void main (){
+	double cantidad;
+	double meuros, mdolares;
+	cout << "Dame la cantidad de soles:";
+	cin >> cantidad;
+	convierte(cantidad, meuros, mdolares);
+	cout << "Euros:" << meuros << endl;
+	cout << "Dolares:" << mdolares << endl;
+	system("pause>>null");
+
+}
